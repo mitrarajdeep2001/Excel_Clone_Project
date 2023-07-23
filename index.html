@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Excel Clone by Rajdeep</title>
+    <link
+      rel="shortcut icon"
+      type="image/x-icon"
+      href="./logo.ico"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Caveat&family=Comic+Neue&family=Crimson+Text&family=Dancing+Script&family=Indie+Flower&family=Lato&family=Mate+SC&family=Mogra&family=Noto+Sans&family=Poppins&family=Roboto&family=Ubuntu&display=swap");
+    </style>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="main-container">
+      <div class="title-bar-container">Book-1 Excel</div>
+      <div class="menu-bar-container">
+        <div class="menu-file menu-item">File</div>
+        <div class="menu-home menu-item selected">Home</div>
+        <div class="menu-insert menu-item">Insert</div>
+        <div class="menu-layout menu-item">Layout</div>
+        <div class="menu-help menu-item">Help</div>
+      </div>
+      <div class="menu-icon-container">
+        <span class="material-symbols-outlined menu-icon" id="content-cut">
+          content_cut
+        </span>
+        <span class="material-symbols-outlined menu-icon" id="content-copy">
+          content_copy
+        </span>
+        <span class="material-symbols-outlined menu-icon" id="content-paste">
+          content_paste
+        </span>
+        <select class="selector font-family-selector">
+          <option value="Arial" style="font-family: Arial">Arial</option>
+          <option value="monospace" style="font-family: monospace">
+            MonoSpace
+          </option>
+          <option value="Verdana" style="font-family: Verdana">Verdana</option>
+          <option value="Calibri" style="font-family: Calibri">Calibri</option>
+          <option value="Poppins" style="font-family: 'Poppins'">
+            Poppins
+          </option>
+          <option value="Ubuntu" style="font-family: 'Ubuntu'">Ubuntu</option>
+          <option value="Noto Sans" style="font-family: 'Noto Sans'">
+            Noto Sans
+          </option>
+          <option value="Mogra" style="font-family: 'Mogra'">Mogra</option>
+          <option value="Mate SC" style="font-family: 'Mate SC'">
+            Mate SC
+          </option>
+          <option value="Lato" style="font-family: 'Lato'">Lato</option>
+          <option value="Dancing Script" style="font-family: 'Dancing Script'">
+            Dancing Script
+          </option>
+          <option value="Crimson Text" style="font-family: 'Crimson Text'">
+            Crimson Text
+          </option>
+          <option value="Comic Neue" style="font-family: 'Comic Neue'">
+            Comic Neue
+          </option>
+          <option value="Bebas Neue" style="font-family: 'Bebas Neue'">
+            Bebas Neue
+          </option>
+          <option value="Indie Flower" style="font-family: 'Indie Flower'">
+            Indie Flower
+          </option>
+          <option value="Caveat" style="font-family: 'Caveat'">Caveat</option>
+        </select>
+        <select class="selector font-size">
+          <option value="5">5</option>
+          <option value="8">8</option>
+          <option value="10">10</option>
+          <option value="12">12</option>
+          <option value="14" selected>14</option>
+          <option value="16">16</option>
+          <option value="18">18</option>
+          <option value="20">20</option>
+          <option value="26">26</option>
+          <option value="30">30</option>
+          <option value="32">36</option>
+          <option value="38">38</option>
+          <option value="45">45</option>
+          <option value="48">48</option>
+          <option value="56">56</option>
+          <option value="60">60</option>
+        </select>
+        <span
+          class="material-symbols-outlined menu-icon style-icon"
+          id="format-bold"
+        >
+          format_bold
+        </span>
+        <span
+          class="material-symbols-outlined menu-icon style-icon"
+          id="format-italic"
+        >
+          format_italic
+        </span>
+        <span
+          class="material-symbols-outlined menu-icon style-icon"
+          id="format-underlined"
+        >
+          format_underlined
+        </span>
+        <span
+          class="material-symbols-outlined menu-icon align-icon selected"
+          id="format-align-left"
+        >
+          format_align_left
+        </span>
+        <span
+          class="material-symbols-outlined menu-icon align-icon"
+          id="format-align-center"
+        >
+          format_align_center
+        </span>
+        <span
+          class="material-symbols-outlined menu-icon align-icon"
+          id="format-align-right"
+        >
+          format_align_right
+        </span>
+        <div id="format-color-fill">
+          <span class="material-symbols-outlined menu-icon">
+            format_color_fill
+          </span>
+          <input type="color" id="input-cell-bg-color" />
+        </div>
+        <div id="format-color-text">
+          <span class="material-symbols-outlined menu-icon">
+            format_color_text
+          </span>
+          <input type="color" id="input-cell-text-color" />
+        </div>
+      </div>
+      <div class="formula-bar-container">
+        <div class="formula-editor selected-cell display-cell"></div>
+        <div class="function-sign">
+          <img
+            class="formula-icon"
+            src="https://img.icons8.com/ios/50/000000/formula-fx.png"
+          />
+        </div>
+        <div class="formula-editor formula-input" contenteditable="false"></div>
+      </div>
+      <div class="data-container">
+        <div class="select-all"></div>
+        <div class="column-name-container"></div>
+        <div class="row-name-container"></div>
+        <div class="input-cell-container"></div>
+      </div>
+      <div class="sheet-bar-container">
+        <div class="scroller-container">
+          <span class="material-symbols-outlined" id="arrow-left">
+            arrow_left
+          </span>
+          <span class="material-symbols-outlined" id="arrow-right">
+            arrow_right
+          </span>
+        </div>
+        <div class="material-symbols-outlined add-sheet">add_circle</div>
+        <div class="sheet-tab-container">
+          <div class="sheet-tab">Sheet1</div>
+        </div>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>

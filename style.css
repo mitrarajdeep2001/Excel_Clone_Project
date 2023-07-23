@@ -1,0 +1,311 @@
+/* Normalise CSS */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    font-size: 62.5%;
+}
+
+body{
+    overflow: hidden;
+}
+
+/* Specific CSS */
+.main-container{
+    height: 100vh;
+}
+
+.title-bar-container{
+    height: 5vh;
+    background-color: #107C41;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #ffffff;
+    font-size: 1.6rem;
+}
+
+.menu-bar-container{
+    height: 5vh;
+    background-color: #107C41;
+    display: flex;
+}
+
+.menu-item{
+    padding-inline: 15px;
+    color: #ffffff;
+    font-size: 1.6rem;
+    display: flex;
+    align-items: center;
+}
+
+.menu-item:hover{
+    background-color: #096331;
+    cursor: pointer;
+}
+
+.menu-item.selected{
+    background-color: #F3F2F1;
+    color: #107C41;
+    padding-top: 6px;
+    cursor: default;
+}
+
+.menu-icon-container{
+    height: 6vh;
+    display: flex;
+    align-items: center;
+    background-color: #F3F2F1;
+}
+
+.menu-icon{
+    margin-inline: 10px;
+    padding-inline: 5px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    font-size: 2.2rem;
+}
+
+.menu-icon:hover{
+    background-color: lightgrey;
+    cursor: pointer;
+}
+
+.selector{
+    height: 25px;
+    border: 1px solid lightgrey;
+    outline: none;
+    font-size: 1.4rem;
+    padding-inline: 5px;
+    border-radius: 3px;
+}
+
+.selector option{
+    font-size: 1.4rem;
+    padding: 5px;
+}
+
+.selector.font-size{
+    margin-left: 10px;
+}
+
+.menu-icon.selected{
+    background-color: lightgrey;
+}
+
+.formula-bar-container{
+    height: 5vh;
+    display: flex;
+    align-items: center;
+    padding-inline: 10px;
+    background-color: #F3F2F1;
+}
+
+.formula-bar-container .formula-editor{
+    height: 70%;
+    width: 120px;
+    border: 1px solid lightgrey;
+    border-radius: 3px;
+    background-color: #ffffff;
+    padding-inline: 10px;
+    font-size: 1.4rem;
+    display: flex;
+    align-items: center;
+    outline-color: #107C41;
+}
+
+.formula-bar-container .function-sign{
+    width: 40px;
+    height: 70%;
+    text-align: center;
+}
+
+.function-sign .formula-icon{
+    width: 18px;
+    height: 18px;
+}
+
+.formula-bar-container .formula-input{
+    width: calc(100vw - 160px);
+}
+
+.data-container{
+    height: 75vh;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.data-container .select-all{
+    width: 30px;
+    height: 30px;
+    border: 2px solid lightgrey;
+    border-bottom: none;
+    border-right: none;
+}
+
+.data-container .column-name-container{
+    height: 30px;
+    width: calc(100vw - 30px);
+    border: 2px solid lightgrey;
+    border-bottom: none;
+    display: flex;
+    overflow: hidden;
+}
+
+.column-name-container .col-name{
+    display: flex;
+    min-width: 100px;
+    justify-content: center;
+    align-items: center;
+    border-right: 1px solid lightgrey;
+    font-size: 1.4rem;
+    font-weight: bold;
+}
+
+.data-container .row-name-container{
+    height: calc(75vh - 30px);
+    width: 30px;
+    border: 2px solid lightgrey;
+    border-right: none;
+    overflow: hidden;
+}
+
+.row-name-container .row-name{
+   display: flex;
+   justify-content: center;
+   align-items: center;
+    min-height: 25px;
+    font-size: 1.4rem;
+    font-weight: bold;
+    border-bottom: 1px solid lightgrey;
+}
+
+.data-container .input-cell-container{
+    width: calc(100vw - 30px);
+    height: calc(75vh - 30px);
+    border: 2px solid lightgrey;
+    overflow: scroll;
+}
+
+.input-cell-container .cell-row{
+    display: flex;
+}
+
+.input-cell{
+    min-width: 100px;
+    min-height: 25px;
+    border-right: 1px solid lightgrey;
+    border-bottom: 1px solid lightgrey;
+    font-size: 1.4rem;
+    font-family: 'Arial';
+    outline-color: #107C41;
+}
+
+.selected-cell{
+    border: 2px solid #107C41;
+}
+
+.cell-text-bold{
+    font-weight: bold;   
+}
+
+.cell-text-italic{
+    font-style: italic;   
+}
+
+.cell-text-underline{
+    text-decoration: underline;   
+}
+
+.cell-text-align-left{
+    text-align: left;
+}
+
+.cell-text-align-center{
+    text-align: center;
+}
+
+.cell-text-align-right{
+    text-align: right;
+}
+
+#format-color-fill{
+    position: relative;
+}
+
+#input-cell-bg-color{
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    left: 0;
+    margin: 2px;
+    width: 100%;
+    height: 100%; 
+    cursor: pointer;
+}
+
+#format-color-text{
+    position: relative;
+}
+
+#input-cell-text-color{
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    left: 0;
+    margin: 2px;
+    width: 100%;
+    height: 100%; 
+    cursor: pointer;
+}
+
+.sheet-bar-container{
+    height: 4vh;
+    display: flex;
+    align-items: center;
+}
+
+.scroller-container{
+    display: flex;
+    align-items: center;
+}
+
+#arrow-left, #arrow-right{
+    font-size: 3rem;
+}
+
+#arrow-left:hover, #arrow-right:hover{
+    background-color: #c8c7c5;
+    cursor: pointer;
+}
+
+.add-sheet{
+    color: #107C41;
+    margin-inline: 20px;
+    padding-bottom: 2px;
+}
+
+.add-sheet:hover{
+    transform: scale(1.2);
+    cursor: pointer;
+}
+
+.sheet-tab-container{
+    border: 1px solid lightgrey;
+    width: 92%;
+    cursor: default;
+}
+
+.sheet-tab{
+    border-bottom: 4px solid #107C41;
+    border-right: 1px solid lightgrey;
+    font-size: 1.6rem;  
+    width: 60px;
+    text-align: center;
+    font-weight: bold;
+}
+
